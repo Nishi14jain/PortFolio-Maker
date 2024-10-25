@@ -1,0 +1,45 @@
+/* Index Page Css */
+
+.index_btn{
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    margin-top: 30%;
+}
+.create-btn{
+    background-image: linear-gradient(#d71299, #c0208d);
+    color: #fff;
+    border: none !important;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 20px;
+    margin: 10px;
+    width: 100px;
+    cursor: pointer;
+}
+
+/* Create page Css */
+.create_page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center;     /* Center content horizontally */
+    color: #fff;
+}
+
+.showpage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center;     /* Center content horizontally */
+    color: #fff;
+}
+
+.show-card{
+    width: 100%;
+    /* align-items: center; */
+    justify-content: center;
+    padding: 20px;
+
+}

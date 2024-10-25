@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
     Nav,
     NavLink,
@@ -9,21 +9,37 @@ import {
 } from "./NavbarElements";
 
 const Navbar = () => {
+const [isOpen, setIsOpen] = useState(false); 
+const toggleMenu =()=>{
+  setIsOpen(!isOpen); 
+}
     return (
     <>
       <Nav>
         {/* Add toggleMenu function to Bars onClick */}
-        <Bars />
+        <Bars onClick={toggleMenu} />
         
         {/* Conditionally render NavMenu based on isOpen state */}
-        <NavMenu >
-          <NavLink to="/create">
+        <NavMenu isOpen={isOpen}>
+          <NavLink to="/index" onClick={toggleMenu}> 
+            Home
+          </NavLink>
+          <NavLink to="/about " onClick={toggleMenu}>
+            About
+          </NavLink>
+          <NavLink to="/contact" onClick={toggleMenu}>
+            Contact
+          </NavLink><NavLink to="/show" onClick={toggleMenu} >
+            Show
+          </NavLink><NavLink to="/create" onClick={toggleMenu}>
             Create
           </NavLink>
-          <NavLink to="/show" >
-            Show
-          </NavLink>
         </NavMenu>
+        <NavBtn>
+                    <NavBtnLink to="/signin">
+                        Sign In
+                    </NavBtnLink>
+                </NavBtn>
       </Nav>
     </>
   );

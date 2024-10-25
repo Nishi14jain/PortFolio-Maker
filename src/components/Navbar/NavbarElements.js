@@ -1,9 +1,6 @@
-// components/Navbar/navbarElements.js
-
 import { FaBars } from "react-icons/fa";
 import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components";
-// import bg from "../../images/bg.jpg";
 
 export const Nav = styled.nav`
     height: 85px;
@@ -11,12 +8,10 @@ export const Nav = styled.nav`
     justify-content: space-between;
     padding: 0.2rem calc((100vw - 1000px) / 2);
     z-index: 12;
-    /* Third Nav */
-    /* justify-content: flex-start; */
 `;
 
 export const NavLink = styled(Link)`
-    color: #ffff;
+    color: #fff;
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -24,9 +19,14 @@ export const NavLink = styled(Link)`
     height: 100%;
     cursor: pointer;
     &.active {
-        color: #000000;
+    color: #AC0D7A;
+    background-color: #fff; 
+     padding:3px 3px3px ; 
+     height:50%;
+     border-radius:20px;  
     }
-    font-weight:700; 
+    font-weight: 700;
+    font-size:20px; 
 `;
 
 export const Bars = styled(FaBars)`
@@ -47,23 +47,23 @@ export const NavMenu = styled.div`
     display: flex;
     align-items: center;
     margin-right: -24px;
-    /* Second Nav */
-    /* margin-right: 24px; */
-    /* Third Nav */
-    /* width: 100vw;
-  white-space: nowrap; */
     @media screen and (max-width: 768px) {
-        display: none;
-    }
+       flex-direction: column;
+        position: absolute;
+        top: 62px;
+        left: 0px;
+        width: 100%;
+        height: 60vh;
+        // background-color: rgb(51, 51, 51);
+        transition: left 0.3s ease-in-out;
+        left: ${({ isOpen }) => (isOpen ? "0" : "-100%")};  // Slide-in effect
+           }
 `;
 
 export const NavBtn = styled.nav`
     display: flex;
     align-items: center;
     margin-right: 24px;
-    /* Third Nav */
-    /* justify-content: flex-end;
-  width: 100vw; */
     @media screen and (max-width: 768px) {
         display: none;
     }
@@ -79,7 +79,6 @@ export const NavBtnLink = styled(Link)`
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     text-decoration: none;
-    /* Second Nav */
     margin-left: 24px;
     &:hover {
         transition: all 0.2s ease-in-out;
